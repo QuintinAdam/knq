@@ -43,3 +43,26 @@ group :development, :test do
   gem 'spring'
 end
 
+
+gem 'devise'
+gem 'foundation-rails'
+gem 'haml-rails'
+gem 'pg'
+gem 'puma'
+gem 'simple_form'
+gem 'upmin-admin'
+
+group :development do
+  gem 'better_errors'
+  gem 'html2haml'
+  gem 'quiet_assets'
+  gem 'rails_apps_pages'
+  gem 'rails_layout'
+end
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-rescue'
+  gem 'rubocop'
+end
+
