@@ -18,7 +18,6 @@ gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
-gem 'foundation-rails'
 gem 'font-awesome-rails'
 
 gem 'simple_form'

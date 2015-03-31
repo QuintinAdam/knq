@@ -14,8 +14,13 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
-//= require foundation
-//= require_tree .
+//= require foundation.min
+//= require foundation/foundation.abide
+//= require jquery.backstretch.min
+//= require jquery.scrollTo-1.4.3-min
+//= require jquery.nav.min
+//= require jquery.flexslider
+//= require custom
 
 $(function() {
   $(document).foundation();

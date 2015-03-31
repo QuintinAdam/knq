@@ -33,8 +33,8 @@ $(document).ready(function() {
 
 	function backStrech() {
 		$("aside").backstretch([
-			"img/placeholder-1.jpg",
-			"img/placeholder-2.jpg",
+			"assets/placeholder-1.jpg",
+			"assets/placeholder-2.jpg",
 
 			], {duration: 5000, fade: 1000});
 	}
@@ -64,20 +64,20 @@ $(document).ready(function() {
 
 		// this is the id of the form
 		var formID = $("#js-form");
-		
+
 		// submits form with ajax method
 		formID.on("submit", function() {
 
 			$.ajax({
 				url: "mailer.php",
-				type: "POST",		    	
+				type: "POST",
 		        data: formID.serialize(), // serializes the form's elements.
 
 		        success: function(data) {
 		        	$(".js-display")
 		        				.addClass("message-panel")
 		        				.html(data); // show response from the php script.
-		        }		    
+		        }
 
 		    });
 
@@ -88,10 +88,10 @@ $(document).ready(function() {
 		// Show/Hide RSVP Menu selection on accept/decline
 		$(".decline").on("click", function(){
 			$(".rsvp-meal-choice").fadeOut();
-		});	
+		});
 		$(".accept").on("click", function(){
 			$(".rsvp-meal-choice").fadeIn();
-		});	
+		});
 
 	}
 	rsvpFormSubmit();
@@ -100,7 +100,7 @@ $(document).ready(function() {
 });
 
 /*-----------------------------------------------------------------------------------*/
-/*	Google Map API 
+/*	Google Map API
 /*  Credit to: http://stiern.com/tutorials/adding-custom-google-maps-to-your-website/
 /*-----------------------------------------------------------------------------------*/
 
@@ -116,7 +116,7 @@ function initialize() {
 	/* For details on styling go to the link below:
 	/* http://www.evoluted.net/thinktank/web-design/custom-google-maps-style-tool */
 	/*----------------------------------------------------------------------------*/
-	
+
 	var featureOpts = [
 		{
 			"featureType": "road",
@@ -161,7 +161,7 @@ function initialize() {
 
 	var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
 
-	var image = new google.maps.MarkerImage("img/map-marker@2x.png", null, null, null, new google.maps.Size(55,57));
+	var image = new google.maps.MarkerImage("assets/map-marker@2x.png", null, null, null, new google.maps.Size(55,57));
 
 	// Includes custom marker on map
 	var myLatLng = new google.maps.LatLng(41.38031,2.17416);

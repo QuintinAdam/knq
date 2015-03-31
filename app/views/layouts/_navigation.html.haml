@@ -1,10 +1,9 @@
-%nav.top-bar{"data-topbar" => true}
-  %ul.title-area
-    %li.name
-      = link_to 'Home', root_path
-    %li.toggle-topbar.menu-icon
-      %a{:href => "#"}
-        Menu
-  .top-bar-section
-    %ul
+.side-nav-container.nav
+  .shadow
+  %h1.logo
+    %a{href: "#section-0"} K + Q
+  %nav.hide-for-large-down
+    %ul.side-nav.primary-nav
       = render 'layouts/navigation_links'
+  %span.ribbon
+

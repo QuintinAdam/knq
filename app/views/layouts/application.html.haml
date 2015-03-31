@@ -1,16 +1,36 @@
 !!!
-%html
+/[if IE 8] <html class="no-js lt-ie9" lang="en">
+<!--[if gt IE 8]><!-->
+%html{class: 'no-js', lang: 'en'}<>
+  <!--<![endif]-->
   %head
-    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+    %meta{charset: "utf-8"}/
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}/
     %title= content_for?(:title) ? yield(:title) : 'Knq'
-    %meta{name: "description", content: "#{content_for?(:description) ? yield(:description) : 'Knq'}"}
+    %meta{name: "description", content: "#{content_for?(:description) ? yield(:description) : 'Knq'}"}/
+    /[if lt IE 9]
+      = stylesheet_link_tag "ie8", media: "all"
+      = javascript_include_tag 'custom.modernizr'
+    %link{href: "http://fonts.googleapis.com/css?family=Roboto+Slab:400,700", rel: "stylesheet"}/
+    %link{href: "http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic", rel: "stylesheet"}/
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'vendor/modernizr'
+    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+
+    %link{href: "assets/apple-touch-icon-144-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "144x144"}/
+    %link{href: "assets/apple-touch-icon-114-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "114x114"}/
+    %link{href: "assets/apple-touch-icon-72-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "72x72"}/
+    %link{href: "assets/apple-touch-icon-57-precomposed.png", rel: "apple-touch-icon-precomposed"}/
+    %link{href: "assets/favicon.ico", rel: "shortcut icon"}/
   %body
-    %header
-      = render 'layouts/navigation'
-    %main{role: "main"}
-      = render 'layouts/messages'
-      = yield
+    = render 'layouts/mobile_navigation'
+    = render 'layouts/messages'
+    .row.collapse{role: "main"}
+      %aside.large-3.columns.hide-for-medium-down
+        = render 'layouts/navigation'
+      #main.large-9.columns
+        = yield
+        %footer.section-odd
+          = render 'layouts/footer'
+
