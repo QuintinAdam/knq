@@ -1,6 +1,17 @@
 .section-title-container
   %h2.section-title Photos
   %span.hearts
+
+.small-12.columns
+  %ul.clearing-thumbs{"data-clearing" => ""}
+    - @category_pictures.each do |picture|
+      %li
+        = link_to '?' do
+          -# # = image_tag picture.photo.url(:large_square), alt: picture.category.humanize
+          %img{alt: "Engagement", src: "assets/photo-1.jpg"}/
+          %span.overlay-label
+            = picture.category.humanize
+
 .small-12.columns
   %ul.clearing-thumbs{"data-clearing" => ""}
     %li
