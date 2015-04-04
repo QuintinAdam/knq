@@ -40,13 +40,13 @@ body {
 	text-align: center;
 }
 a {
-	color:#de675f;
+	color: $primary-color;
 	-webkit-transition: all 300ms ease-out;
 	-moz-transition: all 300ms ease-out;
 	transition: all 300ms ease-out;
 }
 a:hover {
-	color:#ec6d65;
+	color: #ec6d65;
 }
 img {
 	width: 100%;
@@ -61,7 +61,7 @@ h3,
 h4,
 h5,
 h6 {
-	color:#de675f;
+	color:$primary-color;
 	font-family: 'ostrich_sansbold','Helvetica Neue', Helvetica, sans-serif;
 	font-weight: normal;
 	line-height: 1.5;
@@ -279,7 +279,7 @@ aside .postfix.button {
 .side-nav li.active a,
 .side-nav li a:hover {
 	background-color:#fff;
-	color:#de675f;
+	color:$primary-color;
 }
 .side-nav-container {
 	margin: 0 auto;
@@ -294,7 +294,7 @@ aside .postfix.button {
 	margin:5em auto;
 }
 .logo a {
-	background-color: #de675f; /* fallback */
+	background-color: $primary-color; /* fallback */
 	background-color: rgba( 222, 103, 95, 0.9);
 	color:#fff;
 	display: block;
@@ -312,7 +312,7 @@ aside .postfix.button {
 /* Global Buttons */
 
 button, .button {
-	background-color: #de675f;
+	background-color: $primary-color;
 	border-color: transparent;
 	-webkit-box-shadow: none;
 		    box-shadow: none;
@@ -378,7 +378,7 @@ input[type="time"]:focus,
 input[type="url"]:focus,
 textarea:focus {
 	background-color: #FFF;
-	border:1px solid #de675f;
+	border:1px solid $primary-color;
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
 		    box-shadow: none;

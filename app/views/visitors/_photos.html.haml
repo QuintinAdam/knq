@@ -5,9 +5,10 @@
 .photo-link-to.small-12.columns
   %ul.small-block-grid-1.medium-block-grid-2.large-block-grid-4
     - @category_pictures.each do |picture|
-      %li
-        = link_to picture_path(picture.category) do
-          -# # = image_tag picture.photo.url(:large_square), alt: picture.category.humanize
-          %img{alt: picture.category.humanize, src: "assets/photo-1.jpg"}/
-          %span.overlay-label
-            = picture.category.humanize
+      - if category = picture.category
+        %li
+          = link_to picture_path(category) do
+            -# # = image_tag picture.photo.url(:large_square), alt: picture.category.humanize
+            %img{alt: category.humanize, src: "assets/photo-1.jpg"}/
+            %span.overlay-label
+              = category.humanize

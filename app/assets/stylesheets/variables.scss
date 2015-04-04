@@ -6,7 +6,7 @@ $light-tone:     lighten($mid-tone, 15%);
 $dark-tone:      darken($mid-tone, 30%);
 $darker-tone:    darken($mid-tone, 45%);
 
-$primary-color: $black !default;   // bondi-blue
+$primary-color: #de675f !default;
 $secondary-color: $mid-tone !default; // white-lilac
 $alert-color: #f04124 !default;     // cinnabar
 $success-color: #43AC6A !default;   // sea-green

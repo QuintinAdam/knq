@@ -1,35 +1,18 @@
 = render 'pic_nav_links'
-.small-12.columns
-  %ul.clearing-thumbs{"data-clearing" => ""}
-    %li
-      %a{href: "assets/photo-1.jpg"}
-        %img{alt: "Engagement", src: "assets/photo-1.jpg"}/
-        %span.overlay-label Engagement
-    %li
-      %a{href: "assets/photo-2.jpg"}
-        %img{alt: "The Dress", src: "assets/photo-2.jpg"}/
-        %span.overlay-label The Dress
-    %li
-      %a{href: "assets/photo-3.jpg"}
-        %img{alt: "The Ceremony", src: "assets/photo-3.jpg"}/
-        %span.overlay-label The Ceremony
-    %li
-      %a{href: "assets/photo-4-panoramic.jpg"}
-        %img{alt: "Our Reception", src: "assets/photo-4.jpg"}/
-        %span.overlay-label Our Reception
-    %li
-      %a{href: "assets/photo-5.jpg"}
-        %img{alt: "Cutting the Cake", src: "assets/photo-5.jpg"}/
-        %span.overlay-label Cutting the Cake
-    %li
-      %a{href: "assets/photo-6.jpg"}
-        %img{alt: "Bouquet", src: "assets/photo-6.jpg"}/
-        %span.overlay-label Bouquet
-    %li
-      %a{href: "assets/photo-7.jpg"}
-        %img{alt: "Beach Kiss", src: "assets/photo-7.jpg"}/
-        %span.overlay-label Beach Kiss
-    %li
-      %a{href: "assets/photo-8.jpg"}
-        %img{alt: "Memories", src: "assets/photo-8.jpg"}/
-        %span.overlay-label Memories
+
+- @pictures.each_with_index do |picture_group, index|
+  - if category = picture_group.first.category
+    %div{id: "#section-#{index}", class: "row #{index.even? ? 'section-even' : 'section-odd'}"}
+      .section-title-container
+        %h4.section-title= category.humanize
+        %span.hearts
+      .small-12.columns.margin-bottom-10
+        %ul.clearing-thumbs{"data-clearing" => ""}
+          - picture_group.each do |picture|
+            %li
+              %a{href: "assets/photo-1.jpg"}
+                %img{alt: "Engagement", src: "assets/photo-1.jpg"}/
+                %span.overlay-label
+      %p.button.transparent-button.round.small
+        = link_to "View All #{category.humanize} Photos", pictures_path(category)
+
