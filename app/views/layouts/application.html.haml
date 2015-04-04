@@ -25,11 +25,11 @@
     %link{href: "assets/favicon.ico", rel: "shortcut icon"}/
   %body
     = render 'layouts/mobile_navigation'
-    = render 'layouts/messages'
     .row.collapse{role: "main"}
       %aside.large-3.columns.hide-for-medium-down
         = render 'layouts/navigation'
       #main.large-9.columns
+        = render 'layouts/messages'
         = yield
         %footer.section-odd
           = render 'layouts/footer'

@@ -1,7 +1,7 @@
 .side-nav-container.nav
   .shadow
   %h1.logo
-    %a{href: "#section-0"} K + Q
+    = link_to 'K + Q', root_path, class: 'new-page'
   %nav.hide-for-large-down
     %ul.side-nav.primary-nav
       = render 'layouts/navigation_links'

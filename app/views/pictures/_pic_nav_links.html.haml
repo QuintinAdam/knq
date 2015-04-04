@@ -1,0 +1,7 @@
+= content_for :nav_links do
+  %li{class: "#{'active' if params[:action] == 'index'}"}
+    = link_to pictures_path, class: "new-page" do
+      View All
+  - @category_list.each do |category|
+    %li{class: "#{ 'active' if params[:action] == 'show' && @pictures.first.category == category.first}"}
+      = link_to category.first.humanize, picture_path(category.first), class: 'new-page'

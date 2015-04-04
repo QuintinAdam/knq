@@ -575,6 +575,7 @@ label.error {
 	z-index: 997;
 	text-align: left;
 }
+
 .top-bar .name {
 	color:#fff;
 	font-weight: bold;
@@ -582,9 +583,11 @@ label.error {
 	padding-left: 1em;
 	margin-right: 1em;
 }
+
 .top-bar-section ul li {
 	border-bottom: 1px dotted #222222;
 }
+
 .top-bar-section ul li > a {
 	background: #111111;
 	font-weight: normal;

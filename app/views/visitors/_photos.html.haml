@@ -2,47 +2,12 @@
   %h2.section-title Photos
   %span.hearts
 
-.small-12.columns
-  %ul.clearing-thumbs{"data-clearing" => ""}
+.photo-link-to.small-12.columns
+  %ul.small-block-grid-1.medium-block-grid-2.large-block-grid-4
     - @category_pictures.each do |picture|
       %li
-        = link_to '?' do
+        = link_to picture_path(picture.category) do
           -# # = image_tag picture.photo.url(:large_square), alt: picture.category.humanize
-          %img{alt: "Engagement", src: "assets/photo-1.jpg"}/
+          %img{alt: picture.category.humanize, src: "assets/photo-1.jpg"}/
           %span.overlay-label
             = picture.category.humanize
-
-.small-12.columns
-  %ul.clearing-thumbs{"data-clearing" => ""}
-    %li
-      %a{href: "assets/photo-1.jpg"}
-        %img{alt: "Engagement", src: "assets/photo-1.jpg"}/
-        %span.overlay-label Engagement
-    %li
-      %a{href: "assets/photo-2.jpg"}
-        %img{alt: "The Dress", src: "assets/photo-2.jpg"}/
-        %span.overlay-label The Dress
-    %li
-      %a{href: "assets/photo-3.jpg"}
-        %img{alt: "The Ceremony", src: "assets/photo-3.jpg"}/
-        %span.overlay-label The Ceremony
-    %li
-      %a{href: "assets/photo-4-panoramic.jpg"}
-        %img{alt: "Our Reception", src: "assets/photo-4.jpg"}/
-        %span.overlay-label Our Reception
-    %li
-      %a{href: "assets/photo-5.jpg"}
-        %img{alt: "Cutting the Cake", src: "assets/photo-5.jpg"}/
-        %span.overlay-label Cutting the Cake
-    %li
-      %a{href: "assets/photo-6.jpg"}
-        %img{alt: "Bouquet", src: "assets/photo-6.jpg"}/
-        %span.overlay-label Bouquet
-    %li
-      %a{href: "assets/photo-7.jpg"}
-        %img{alt: "Beach Kiss", src: "assets/photo-7.jpg"}/
-        %span.overlay-label Beach Kiss
-    %li
-      %a{href: "assets/photo-8.jpg"}
-        %img{alt: "Memories", src: "assets/photo-8.jpg"}/
-        %span.overlay-label Memories
