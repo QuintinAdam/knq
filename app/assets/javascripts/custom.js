@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 	function smoothScroll(){
 		$(".nav").onePageNav({
-			filter: ':not(.external)',
+			filter: ':not(.external,.new-page)',
 			scrollSpeed: 1500
 		});
 
@@ -33,9 +33,8 @@ $(document).ready(function() {
 
 	function backStrech() {
 		$("aside").backstretch([
-			"assets/placeholder-1.jpg",
-			"assets/placeholder-2.jpg",
-
+			"/assets/placeholder-1.jpg",
+			"/assets/placeholder-2.jpg",
 			], {duration: 5000, fade: 1000});
 	}
 
@@ -105,7 +104,7 @@ $(document).ready(function() {
 /*-----------------------------------------------------------------------------------*/
 
 var map;
-var myLatlng = new google.maps.LatLng(41.38031,2.17416); // Specify YOUR coordinates
+var myLatlng = new google.maps.LatLng(42.480590,-83.475491); // Specify YOUR coordinates
 
 var MY_MAPTYPE_ID = 'custom_style';
 
@@ -161,10 +160,10 @@ function initialize() {
 
 	var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
 
-	var image = new google.maps.MarkerImage("assets/map-marker@2x.png", null, null, null, new google.maps.Size(55,57));
+	var image = new google.maps.MarkerImage("/assets/map-marker@2x.png", null, null, null, new google.maps.Size(55,57));
 
 	// Includes custom marker on map
-	var myLatLng = new google.maps.LatLng(41.38031,2.17416);
+	var myLatLng = new google.maps.LatLng(42.480590,-83.475491);
 	var beachMarker = new google.maps.Marker({
 		position: myLatLng,
 		map: map,
