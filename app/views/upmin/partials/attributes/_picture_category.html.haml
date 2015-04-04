@@ -1,0 +1,7 @@
+.form-group{class: attribute.errors? ? "has-error" : ""}
+  - if attribute.editable? && f = form_builder
+    %label{for: attribute.form_id}
+      = 'Category'
+    .select
+      = f.collection_select :category, Picture.categories, :first, :first
+

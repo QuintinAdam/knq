@@ -8,7 +8,6 @@
       - if category = picture.category
         %li
           = link_to picture_path(category) do
-            -# # = image_tag picture.photo.url(:large_square), alt: picture.category.humanize
-            %img{alt: category.humanize, src: "assets/photo-1.jpg"}/
+            = image_tag picture.photo.url(:medium_square), alt: category.humanize
             %span.overlay-label
               = category.humanize

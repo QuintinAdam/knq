@@ -10,9 +10,9 @@
         %ul.clearing-thumbs{"data-clearing" => ""}
           - picture_group.each do |picture|
             %li
-              %a{href: "assets/photo-1.jpg"}
-                %img{alt: "Engagement", src: "assets/photo-1.jpg"}/
-                %span.overlay-label
+              %a{href: picture.photo.url(:large)}
+                = image_tag picture.photo.url(:medium_square), class: 'bw-photo'
+                -# %span.overlay-label
       %p.button.transparent-button.round.small
-        = link_to "View All #{category.humanize} Photos", pictures_path(category)
+        = link_to "View All #{category.humanize} Photos", picture_path(category)
 
