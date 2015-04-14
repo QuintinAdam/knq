@@ -20,13 +20,12 @@ span.day-date {
   border: 1px solid $primary-color;
 
   a:hover {
-    color: white;
+    color: $white;
     background: $primary-color;
   }
 }
 
 #error_explanation {
-
   ul {
     list-style: none;
   }

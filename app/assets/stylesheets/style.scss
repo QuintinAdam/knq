@@ -481,7 +481,7 @@ form.custom .dropdown {
   margin-bottom: 1em;
   font-size: .75em;
   font-weight: normal;
-  background: #c60f13;
+  background: $alert-color;
   color: $white;
 }
 
@@ -497,14 +497,14 @@ span.error, small.error {
   margin-bottom: 1em;
   font-size: .75em;
   font-weight: bold;
-  background: #c60f13;
+  background: $alert-color;
   color: $white;
 }
 
 .error input,
 .error textarea,
 .error select {
-  border-color: #c60f13;
+  border-color: $alert-color;
   background-color: rgba(198, 15, 19, .1);
   margin-bottom: 0;
 }
@@ -518,7 +518,7 @@ span.error, small.error {
 
 .error label,
 .error label.error {
-    color: #c60f13;
+    color: $alert-color;
 }
 
 .error > small,
@@ -529,7 +529,7 @@ span.error, small.error {
   margin-bottom: 1em;
   font-size: .75em;
   font-weight: bold;
-  background: #c60f13;
+  background: $alert-color;
   color: $white;
 }
 
@@ -539,7 +539,7 @@ span.error, small.error {
 
 input.error,
 textarea.error {
-  border-color: #c60f13;
+  border-color: $alert-color;
   background-color: rgba(198, 15, 19, .1);
   margin-bottom: 0;
 }
@@ -551,7 +551,7 @@ textarea.error:focus {
 }
 
 .error select {
-    border-color: #c60f13;
+    border-color: $alert-color;
     background-color: rgba(198, 15, 19, .1);
 }
 
@@ -561,7 +561,7 @@ textarea.error:focus {
 }
 
 label.error {
-  color: #c60f13;
+  color: $alert-color;
 }
 
 // /*==== Notification Panel ====*/
@@ -585,10 +585,12 @@ label.error {
   max-width:100%;
   width: 100%;
 }
+
 .carousel img {
   max-width: 100%;
   height: auto;
 }
+
 .overlay-label {
   background-color: rgba( 222, 103, 95, .7);
   display: inline;
@@ -609,8 +611,8 @@ label.error {
   -webkit-transition: all .4s;
      -moz-transition: all .4s;
           transition: all .4s;
-
 }
+
 .overlay-label:hover {
   opacity: 1;
 }
@@ -641,6 +643,7 @@ label.error {
   background: #111111;
   font-weight: normal;
 }
+
 .top-bar-section ul li:first-child {
   display: none;
 }
@@ -655,12 +658,15 @@ footer {
   text-align: center;
   padding: 2em;
 }
+
 footer p {
   font-size: .750em;
   margin-bottom: 0;
 }
+
 footer a {
 }
+
 .copyright {
   margin-bottom: .650em;
 }
@@ -670,12 +676,14 @@ footer a {
 // /*-----------------------------------------------------------------------------------*/
 
 .wrapper {
-  padding: 0 1em!important;
+  padding: 0 1em !important;
 }
+
 .sep {
   margin: 3em 0 2em;
 }
+
 .preloader {
-  background:url(../assets/status.gif) no-repeat center center;
-  min-height:400px;
+  background: url(../assets/status.gif) no-repeat center center;
+  min-height: 400px;
 }
