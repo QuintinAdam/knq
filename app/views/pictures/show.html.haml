@@ -3,3 +3,10 @@
 .section-title-container
   %h2.section-title= @pictures.first.category.humanize
   %span.hearts
+.small-12.columns.margin-bottom-10
+  %ul.clearing-thumbs{"data-clearing" => ""}
+    - @pictures.each do |picture|
+      %li
+        %a{href: picture.photo.url(:large)}
+          = image_tag picture.photo.url(:medium_square), class: 'bw-photo'
+          -# %span.overlay-label
