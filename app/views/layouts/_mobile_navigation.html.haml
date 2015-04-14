@@ -1,12 +1,13 @@
-%nav.top-bar.show-for-large-down.nav{"data-topbar" => true}
-  %ul.title-area
-    %li.name Navigate to...
+%nav.top-bar.show-for-large-down.nav.bg-primary{"data-topbar" => true}
+  %ul.title-area.bg-primary
+    %li.name
+      = link_to "Katherine & Quintin", root_path, class: 'text-white new-page'
     %li.toggle-topbar.menu-icon
       %a{href: "#"}
         %span
   %section.top-bar-section
     %ul
       %li
-        %a{:href => "#section-0"}
+        %a{href: "#section-0"}
           %i.fa.fa-arrow-up
       = render 'layouts/navigation_links'

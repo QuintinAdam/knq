@@ -1,1 +1,51 @@
+$topbar-bg-color: $primary-color;
+
+nav.top-bar.nav.bg-primary {
+  background-color: $topbar-bg-color;
+  color: $white;
+
+  ul.title-area .name {
+    a:hover, a:focus, a:visited {
+      color: $white;
+    }
+  }
+
+  &.expanded .title-area {
+    background-color: $topbar-bg-color;
+
+    .name a:hover {
+      color: $white;
+    }
+
+    .toggle-topbar a{
+      color: white;
+      span {
+        -webkit-box-shadow: 0 10px 0 1px #fff,0 16px 0 1px #fff,0 22px 0 1px #fff;
+          box-shadow: 0 10px 0 1px #fff,0 16px 0 1px #fff,0 22px 0 1px #fff;
+      }
+    }
+  }
+
+  li.toggle-topbar.menu-icon {
+    background-color: $topbar-bg-color;
+    color: $white;
+    a:hover, a:focus, a:visited, a:active {
+      color: $white;
+    }
+  }
+
+  a:hover, a:focus, a:visited {
+    background-color: $topbar-bg-color;
+    text: $white;
+  }
+
+  .top-bar-section ul li {
+    a {
+      color: white;
+      background-color: $primary-color;
+    }
+  }
+}
+
 @import 'foundation.min';
+

@@ -1,13 +1,5 @@
 /*------------------------------------------------------------------------------------
 
-	Theme Name: Eternity
-	Theme URI: http://demo.themechills.com/eternity
-	Description: A beautiful landing page template for all wedding occasions.
-	Author: ThemeChills
-	Author URI: http://www.themechills.com
-
---------------------------------------------------------------------------------------
-
 	1. Screens that are at least 768px
 	2. Screens that are at least 940px
 	3. Screens that are at least 1280px
@@ -133,6 +125,7 @@
 		position: absolute;
 		right: 0;
 	}
+
 	.top-bar-section ul li {
 		border: none;
 	}
@@ -163,12 +156,15 @@
 	.large-3 {
 		width: 25%;
 	}
+
 	.large-9 {
 		width: 75%;
 	}
+
 	.row .large-offset-1 {
 		margin-left: 8.33333%;
 	}
+
 	.section-title {
 		margin-top: 0.550em;
 	}
@@ -177,15 +173,17 @@
 
 	aside {
 		height: 100%;
-		position: fixed!important;
+		position: fixed !important;
 		float: left;
 		display: block;
 		left: 0;
 		z-index: 10;
 	}
+
 	#main > .row {
 		padding-top: 0;
 	}
+
 	.top-bar {
 		display: none!important;
 	}
