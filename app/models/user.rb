@@ -9,15 +9,6 @@ class User < ActiveRecord::Base
 
   validates :first_name, :last_name, :email, presence: true
   validates_format_of :email, with: Devise.email_regexp
-  # attributes :phone
-  # attributes :will_attend
-  # attributes :street_address
-  # attributes :city
-  # attributes :state_region
-  # attributes :postal_code
-  # attributes :country
-  # attributes :birthday
-  # attributes :message
 
   append :remote_ip, :user_agent
   def headers
