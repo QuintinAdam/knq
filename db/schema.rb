@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150401040222) do
 
   create_table "pictures", force: :cascade do |t|
     t.string   "title"
-    t.integer  "category",           default: 0
+    t.integer  "category",           default: 2
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
