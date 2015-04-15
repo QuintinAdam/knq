@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'font-awesome-rails'
 
 gem 'simple_form'
+gem 'mail_form'
+
 gem 'figaro'
 gem 'paperclip'
 # gem 'cocoon'
@@ -28,7 +30,7 @@ gem 'paperclip'
 group :development do
   gem 'letter_opener'
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_21]
+  gem 'binding_of_caller'
   gem 'meta_request'
   gem 'xray-rails'
   gem 'html2haml'
