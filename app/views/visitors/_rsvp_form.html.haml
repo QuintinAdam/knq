@@ -25,6 +25,31 @@
       .large-6.columns
         = f.label :phone, html_options: {for: "phone"}
         %input#phone.input-field{name: "phone", placeholder: "A phone number is optional", type: "tel", value: ""}/
+    .row
+      .large-6.columns
+        %label{for: "street_address"} Street Address
+        %input#street_address.input-field{name: "street_address", placeholder: "Your street address", required: "", type: "street_address", value: ""}/
+        %small.error Your street address is required.
+      .large-6.columns
+        %label{for: "city"} City
+        %input#city.input-field{name: "city", placeholder: "Choose a city", type: "city", value: ""}/
+    .row
+      .large-6.columns
+        %label{for: "state_region"} State or region
+        %input#state_region.input-field{name: "state_region", placeholder: "Your State or region", required: "", type: "state_region", value: ""}/
+        %small.error Your state or region is required.
+      .large-6.columns
+        %label{for: "country"} Country
+        %input#country.input-field{name: "country", placeholder: "Choose a country", type: "country", value: ""}/
+    .row
+      .large-6.columns
+        %label{for: "postal_code"} Postal code
+        %input#postal_code.input-field{name: "postal_code", placeholder: "Your postal code", required: "", type: "postal_code", value: ""}/
+        %small.error Your postal code is required.
+      .large-6.columns
+        %label{for: "birthday"} Birthday
+        %input#birthday.input-field{name: "birthday", placeholder: "Enter your birthday", type: "birthday", value: ""}/
+        
   %fieldset.rsvp-attendance
     %legend Will you be attending?
     .large-6.columns
