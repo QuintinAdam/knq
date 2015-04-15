@@ -26,6 +26,7 @@ gem 'mail_form'
 gem 'figaro'
 gem 'paperclip'
 # gem 'cocoon'
+gem 'devise_invitable'
 
 group :development do
   gem 'letter_opener'

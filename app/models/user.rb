@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   enum role: [:guest, :admin]
   has_many :pictures
 
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   attributes :first_name,  validate: true
