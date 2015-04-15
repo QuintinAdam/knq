@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :email, presence: true
   validates_format_of :email, with: Devise.email_regexp
 
-  append :remote_ip, :user_agent
+  # append :remote_ip, :user_agent
   def headers
     {
       to: "your.email@your.domain.com",

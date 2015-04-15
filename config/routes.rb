@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   get '/photos', to: 'pictures#index', as: :pictures
   get '/photos/:category', to: 'pictures#show', as: :picture
   # resources :pictures, only: [:index, :show]
-
+  post '/rsvp', to: 'users#rsvp', as: :rsvp
   root to: 'visitors#index'
 end

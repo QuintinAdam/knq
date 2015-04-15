@@ -1,6 +1,8 @@
-%form#js-form.rsvp-form.custom{action: "#", "data-abide" => "", method: "POST"}
+= simple_form_for @rsvp, url: rsvp_path, html: {id: 'js-form', class: 'rsvp-form custom', "data-abide" => ""}, remote: true do |f|
+  -# %form#js-form.rsvp-form.custom{action: "#", "data-abide" => "", method: "POST"}
   %fieldset.rsvp-details
     / Displays a global alert if required fields are missing
+    = f.error_notification
     .js-display
     %legend
       Kindly respond by
@@ -8,29 +10,31 @@
         %strong April 30, 2014
     .row
       .large-6.columns
-        %label{for: "firstname"} First Name
+        = f.label :first_name, html_options: {for: "firstname"}
         %input#firstname.input-field{name: "firstname", placeholder: "Your first name is required", required: "", type: "text", value: ""}/
         %small.error First Name is required.
       .large-6.columns
-        %label{for: "lastname"} Last Name
+        = f.label :last_name, text: 'Last Name', html_options: {for: "lastname"}
         %input#lastname.input-field{name: "lastname", placeholder: "Your last name is required", required: "", type: "text", value: ""}/
         %small.error Last Name is required.
     .row
       .large-6.columns
-        %label{for: "email"} Email
+        = f.label :email, html_options: {for: "email"}
         %input#email.input-field{name: "email", placeholder: "name@yourdomain.com", required: "", type: "email", value: ""}/
         %small.error Valid Email is required.
       .large-6.columns
-        %label{for: "phone"} Phone
+        = f.label :phone, html_options: {for: "phone"}
         %input#phone.input-field{name: "phone", placeholder: "A phone number is optional", type: "tel", value: ""}/
   %fieldset.rsvp-attendance
     %legend Will you be attending?
     .large-6.columns
+      -# # = f.label :first_name, html_options: {for: "firstname"}
       %label{for: "radio1"}
         %input#radio1{name: "radio", required: "", style: "display:none;", type: "radio", value: "Accepts with Pleasure!"}/
         %span.custom.radio.accept
         %span.radio-label Accepts with Pleasure!
     .large-6.columns
+      -# # = f.label :first_name, html_options: {for: "firstname"}
       %label{for: "radio2"}
         %input#radio2{name: "radio", required: "", style: "display:none;", type: "radio", value: "Declines with Regret."}/
         %span.custom.radio.decline
@@ -40,6 +44,7 @@
       Please select your meal choices
     .row
       .large-6.columns
+        = f.label :first_name, html_options: {for: "firstname"}
         %label{for: "main-course"} Main
         %select#main-course{name: "main-course"}
           %option{selected: "selected"} None
@@ -47,6 +52,7 @@
           %option Beef
           %option Vegetarian
       .large-6.columns
+        = f.label :first_name, html_options: {for: "firstname"}
         %label{for: "dessert"} Dessert
         %select#dessert{name: "dessert"}
           %option{selected: "selected"} None
