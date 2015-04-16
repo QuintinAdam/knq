@@ -1,6 +1,7 @@
 class  PicturesController < ApplicationController
 
   before_action :set_category_list
+
   def index
     @pictures = Picture.order(:category, created_at: :desc).group_by(&:category).map{ |category, value| value.first(8) }
   end

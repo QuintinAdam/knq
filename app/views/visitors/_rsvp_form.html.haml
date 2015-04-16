@@ -1,4 +1,4 @@
-= simple_form_for @rsvp, url: rsvp_path, html: {id: 'js-form', class: 'rsvp-form custom', "data-abide" => ""} do |f|
+= simple_form_for @rsvp, url: rsvp_path, html: {id: 'js-form', class: 'rsvp-form custom', "data-abide" => ""}, remote: true do |f|
   -# %form#js-form.rsvp-form.custom{action: "#", "data-abide" => "", method: "POST"}
   = f.error_notification
   %fieldset.rsvp-details
@@ -27,20 +27,20 @@
         %input#user_phone.input-field{name: "user[phone]", placeholder: "A phone number is optional but helpful", type: "tel", value: f.object.phone}/
   %fieldset.address_form
     %legend
-      Help us to fill our address book  
+      Help us to fill our address book!
     .row
       .large-12.columns
-        = f.label :street_address, 'Street Address', html_options: {for: "user_street_address"} 
+        = f.label :street_address, 'Street Address', html_options: {for: "user_street_address"}
         %input#user_street_address.input-field{name: "user[street_address]", placeholder: "Your street address", type: "text", value: f.object.street_address}/
-    .row  
+    .row
       .large-6.columns
-        = f.label :city, 'City', html_options: {for: "user_city"} 
+        = f.label :city, 'City', html_options: {for: "user_city"}
         %input#user_city.input-field{name: "user[city]", placeholder: "Your city", type: "text", value: f.object.city}/
       .large-3.columns
         = f.label :state_region, 'State or Region', html_options: {for: "user_state_region"}
         %input#user_state_region.input-field{name: "user[state_region]", placeholder: "Your state or region", type: "text", value: f.object.state_region}/
-      .large-3.columns  
-        = f.label :postal_code, 'Postal Code', html_options:{for: "user_postal_code"} 
+      .large-3.columns
+        = f.label :postal_code, 'Postal Code', html_options:{for: "user_postal_code"}
         %input#user_postal_code.input-field{name: "user[postal_code]", placeholder: "Your postal code", type: "text", value: f.object.postal_code}/
     .row
       .large-6.columns
@@ -50,7 +50,7 @@
         = f.label :birthday, 'Birthday', html_options:{for: "user_birthday"}
         %input#user_birthday.input-field{name: "user[birthday]", placeholder: "Enter your birthday", type: "date", value: f.object.birthday}/
         %small.error Invalid Date.
-        
+
   %fieldset.rsvp-attendance
     %legend Will you be attending?
     .large-6.columns
@@ -58,6 +58,7 @@
         %input#user_will_attend_true{name: "user[will_attend]", required: "", style: "display:none;", type: "radio", value: 'true'}/
         %span.custom.radio.accept
         %span.radio-label Accepts with Pleasure!
+        %small.error Please select an option.
     .large-6.columns
       %label{for: "user_will_attend_false"}
         %input#user_will_attend_false{name: "user[will_attend]", required: "", style: "display:none;", type: "radio", value: 'false'}/
@@ -85,7 +86,7 @@
   /         %option Key Lime Pie
   %fieldset.other_form
     %legend
-      Notes  
+      Notes
     .row
       .small-12.columns
         =f.input_field :message, placeholder: 'Send us your thoughts / questions...'
