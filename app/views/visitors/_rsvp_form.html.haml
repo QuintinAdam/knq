@@ -27,28 +27,28 @@
         %input#phone.input-field{name: "phone", placeholder: "A phone number is optional", type: "tel", value: ""}/
     .row
       .large-6.columns
-        %label{for: "street_address"} Street Address
-        %input#street_address.input-field{name: "street_address", placeholder: "Your street address", required: "", type: "street_address", value: ""}/
+        = f.label :street_address, html_options: {for: "street_address"} 
+        %input#street_address.input-field{name: "street_address", placeholder: "Your street address", required: "", type: "text", value: ""}/
         %small.error Your street address is required.
       .large-6.columns
-        %label{for: "city"} City
-        %input#city.input-field{name: "city", placeholder: "Choose a city", type: "city", value: ""}/
+        = f.label :city, html_options: {for: "city"} 
+        %input#city.input-field{name: "city", placeholder: "Choose a city", type: "text", value: ""}/
     .row
       .large-6.columns
-        %label{for: "state_region"} State or region
-        %input#state_region.input-field{name: "state_region", placeholder: "Your State or region", required: "", type: "state_region", value: ""}/
+        = f.label :state_region, html_options: {for: "state_region"}
+        %input#state_region.input-field{name: "state_region", placeholder: "Your State or region", required: "", type: "text", value: ""}/
         %small.error Your state or region is required.
       .large-6.columns
-        %label{for: "country"} Country
-        %input#country.input-field{name: "country", placeholder: "Choose a country", type: "country", value: ""}/
+        = f.label :country, html_options:{for: "country"}
+        %input#country.input-field{name: "country", placeholder: "Choose a country", type: "text", value: ""}/
     .row
-      .large-6.columns
-        %label{for: "postal_code"} Postal code
-        %input#postal_code.input-field{name: "postal_code", placeholder: "Your postal code", required: "", type: "postal_code", value: ""}/
+      .large-6.columns  
+        = f.label :postal_code, html_options:{for: "postal_code"} 
+        %input#postal_code.input-field{name: "postal_code", placeholder: "Your postal code", required: "", type: "text", value: ""}/
         %small.error Your postal code is required.
       .large-6.columns
-        %label{for: "birthday"} Birthday
-        %input#birthday.input-field{name: "birthday", placeholder: "Enter your birthday", type: "birthday", value: ""}/
+        = f.label :birthday, html_options:{for: "birthday"}
+        %input#birthday.input-field{name: "birthday", placeholder: "Enter your birthday", type: "date", value: ""}/
         
   %fieldset.rsvp-attendance
     %legend Will you be attending?
