@@ -65,24 +65,24 @@ $(document).ready(function() {
 		var formID = $("#js-form");
 
 		// submits form with ajax method
-		formID.on("submit", function() {
+		// formID.on("submit", function() {
 
-			$.ajax({
-				url: "mailer.php",
-				type: "POST",
-		        data: formID.serialize(), // serializes the form's elements.
+		// 	$.ajax({
+		// 		url: "/rsvp",
+		// 		type: "POST",
+		//         data: formID.serialize(), // serializes the form's elements.
 
-		        success: function(data) {
-		        	$(".js-display")
-		        				.addClass("message-panel")
-		        				.html(data); // show response from the php script.
-		        }
+		//         success: function(data) {
+		//         	$(".js-display")
+		//         				.addClass("message-panel")
+		//         				.html(data); // show response from the php script.
+		//         }
 
-		    });
+		//     });
 
-		    return false; // avoid to execute the actual submit of the form.
+		//     return false; // avoid to execute the actual submit of the form.
 
-		});
+		// });
 
 		// Show/Hide RSVP Menu selection on accept/decline
 		$(".decline").on("click", function(){

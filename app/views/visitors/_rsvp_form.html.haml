@@ -1,8 +1,8 @@
-= simple_form_for @rsvp, url: rsvp_path, html: {id: 'js-form', class: 'rsvp-form custom', "data-abide" => ""}, remote: true do |f|
+= simple_form_for @rsvp, url: rsvp_path, html: {id: 'js-form', class: 'rsvp-form custom', "data-abide" => ""} do |f|
   -# %form#js-form.rsvp-form.custom{action: "#", "data-abide" => "", method: "POST"}
+  = f.error_notification
   %fieldset.rsvp-details
     / Displays a global alert if required fields are missing
-    = f.error_notification
     .js-display
     %legend
       Kindly respond by
@@ -10,80 +10,85 @@
         %strong April 30, 2014
     .row
       .large-6.columns
-        = f.label :first_name, html_options: {for: "firstname"}
-        %input#firstname.input-field{name: "firstname", placeholder: "Your first name is required", required: "", type: "text", value: ""}/
+        = f.label :first_name, 'First Name', html_options: {for: "user_first_name"}
+        %input#user_first_name.input-field{name: "user[first_name]", placeholder: "Your first name is required", required: "", type: "text", value: f.object.first_name}/
         %small.error First Name is required.
       .large-6.columns
-        = f.label :last_name, text: 'Last Name', html_options: {for: "lastname"}
-        %input#lastname.input-field{name: "lastname", placeholder: "Your last name is required", required: "", type: "text", value: ""}/
+        = f.label :last_name, 'Last Name', html_options: {for: "user_last_name"}
+        %input#user_last_name.input-field{name: "user[last_name]", placeholder: "Your last name is required", required: "", type: "text", value: f.object.last_name}/
         %small.error Last Name is required.
     .row
       .large-6.columns
-        = f.label :email, html_options: {for: "email"}
-        %input#email.input-field{name: "email", placeholder: "name@yourdomain.com", required: "", type: "email", value: ""}/
+        = f.label :email, 'Email', html_options: {for: "user_email"}
+        %input#user_email.input-field{name: "user[email]", placeholder: "name@yourdomain.com", required: "", type: "email", value: f.object.email}/
         %small.error Valid Email is required.
       .large-6.columns
-        = f.label :phone, html_options: {for: "phone"}
-        %input#phone.input-field{name: "phone", placeholder: "A phone number is optional", type: "tel", value: ""}/
+        = f.label :phone, 'Phone', html_options: {for: "user_phone"}
+        %input#user_phone.input-field{name: "user[phone]", placeholder: "A phone number is optional but helpful", type: "tel", value: f.object.phone}/
+  %fieldset.address_form
+    %legend
+      Help us to fill our address book  
+    .row
+      .large-12.columns
+        = f.label :street_address, 'Street Address', html_options: {for: "user_street_address"} 
+        %input#user_street_address.input-field{name: "user[street_address]", placeholder: "Your street address", type: "text", value: f.object.street_address}/
+    .row  
+      .large-6.columns
+        = f.label :city, 'City', html_options: {for: "user_city"} 
+        %input#user_city.input-field{name: "user[city]", placeholder: "Your city", type: "text", value: f.object.city}/
+      .large-3.columns
+        = f.label :state_region, 'State or Region', html_options: {for: "user_state_region"}
+        %input#user_state_region.input-field{name: "user[state_region]", placeholder: "Your state or region", type: "text", value: f.object.state_region}/
+      .large-3.columns  
+        = f.label :postal_code, 'Postal Code', html_options:{for: "user_postal_code"} 
+        %input#user_postal_code.input-field{name: "user[postal_code]", placeholder: "Your postal code", type: "text", value: f.object.postal_code}/
     .row
       .large-6.columns
-        = f.label :street_address, html_options: {for: "street_address"} 
-        %input#street_address.input-field{name: "street_address", placeholder: "Your street address", required: "", type: "text", value: ""}/
-        %small.error Your street address is required.
+        = f.label :country, 'Country', html_options:{for: "user_country"}
+        %input#user_country.input-field{name: "user[country]", placeholder: "Your country", type: "text", value: f.object.country}/
       .large-6.columns
-        = f.label :city, html_options: {for: "city"} 
-        %input#city.input-field{name: "city", placeholder: "Choose a city", type: "text", value: ""}/
-    .row
-      .large-6.columns
-        = f.label :state_region, html_options: {for: "state_region"}
-        %input#state_region.input-field{name: "state_region", placeholder: "Your State or region", required: "", type: "text", value: ""}/
-        %small.error Your state or region is required.
-      .large-6.columns
-        = f.label :country, html_options:{for: "country"}
-        %input#country.input-field{name: "country", placeholder: "Choose a country", type: "text", value: ""}/
-    .row
-      .large-6.columns  
-        = f.label :postal_code, html_options:{for: "postal_code"} 
-        %input#postal_code.input-field{name: "postal_code", placeholder: "Your postal code", required: "", type: "text", value: ""}/
-        %small.error Your postal code is required.
-      .large-6.columns
-        = f.label :birthday, html_options:{for: "birthday"}
-        %input#birthday.input-field{name: "birthday", placeholder: "Enter your birthday", type: "date", value: ""}/
+        = f.label :birthday, 'Birthday', html_options:{for: "user_birthday"}
+        %input#user_birthday.input-field{name: "user[birthday]", placeholder: "Enter your birthday", type: "date", value: f.object.birthday}/
+        %small.error Invalid Date.
         
   %fieldset.rsvp-attendance
     %legend Will you be attending?
     .large-6.columns
-      -# # = f.label :first_name, html_options: {for: "firstname"}
-      %label{for: "radio1"}
-        %input#radio1{name: "radio", required: "", style: "display:none;", type: "radio", value: "Accepts with Pleasure!"}/
+      %label{for: "user_will_attend_true"}
+        %input#user_will_attend_true{name: "user[will_attend]", required: "", style: "display:none;", type: "radio", value: 'true'}/
         %span.custom.radio.accept
         %span.radio-label Accepts with Pleasure!
     .large-6.columns
-      -# # = f.label :first_name, html_options: {for: "firstname"}
-      %label{for: "radio2"}
-        %input#radio2{name: "radio", required: "", style: "display:none;", type: "radio", value: "Declines with Regret."}/
+      %label{for: "user_will_attend_false"}
+        %input#user_will_attend_false{name: "user[will_attend]", required: "", style: "display:none;", type: "radio", value: 'false'}/
         %span.custom.radio.decline
         %span.radio-label Declines with Regret.
-  %fieldset.rsvp-meal-choice
+  / %fieldset.rsvp-meal-choice
+  /   %legend
+  /     Please select your meal choices
+  /   .row
+  /     .large-6.columns
+  /       = f.label :first_name, html_options: {for: "firstname"}
+  /       %label{for: "main-course"} Main
+  /       %select#main-course{name: "main-course"}
+  /         %option{selected: "selected"} None
+  /         %option Chicken
+  /         %option Beef
+  /         %option Vegetarian
+  /     .large-6.columns
+  /       = f.label :first_name, html_options: {for: "firstname"}
+  /       %label{for: "dessert"} Dessert
+  /       %select#dessert{name: "dessert"}
+  /         %option{selected: "selected"} None
+  /         %option Chocolate Cake
+  /         %option Lemon Cheesecake
+  /         %option Key Lime Pie
+  %fieldset.other_form
     %legend
-      Please select your meal choices
+      Notes  
     .row
-      .large-6.columns
-        = f.label :first_name, html_options: {for: "firstname"}
-        %label{for: "main-course"} Main
-        %select#main-course{name: "main-course"}
-          %option{selected: "selected"} None
-          %option Chicken
-          %option Beef
-          %option Vegetarian
-      .large-6.columns
-        = f.label :first_name, html_options: {for: "firstname"}
-        %label{for: "dessert"} Dessert
-        %select#dessert{name: "dessert"}
-          %option{selected: "selected"} None
-          %option Chocolate Cake
-          %option Lemon Cheesecake
-          %option Key Lime Pie
-  %button#js-submit-btn.button.radius{type: "submit"}
+      .small-12.columns
+        =f.input_field :message, placeholder: 'Send us your thoughts / questions...'
+  %button.button.radius{type: "submit"}
     %i.fa.fa-envelope
     %span.btn-label Send
