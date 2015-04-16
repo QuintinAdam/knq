@@ -3,10 +3,12 @@ class UsersController < ApplicationController
 
   def rsvp
     # check if user exists
+
     unless User.find_by_email(params[:user][:email])
       @rsvp_email = User.invite!(rsvp_form_params) {|u| u.skip_invitation = true }
       if @rsvp_email.valid?
-        @rsvp_email.invite!
+        @rsvp_email.deliver_invitation
+      raise "the roof"
         # after invite it sends the email to us
         # render thank you message
       else

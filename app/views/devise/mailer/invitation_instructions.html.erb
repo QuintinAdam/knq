@@ -1,7 +1,30 @@
-<p><%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %></p>
+<p>Hello <%= @resource.first_name %>, </p>
 
-<p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
+<p>Thank you for your RSVP! </p>
 
+<p>We are honored to have you come celebrate our wedding day with us. </p> 
+
+<p>We will have more information soon and we will keep you updated by email.</p>
+
+<p>While you wait you can finish creating your account on our site. </p>
+
+<p>Your account is important because you will be able to help us out before and after the wedding. </p>
+
+<p>We will explain what you can do on the website to help us out soon!</p>
+
+<p>Use this link to set your password on your account!</p>
 <p><%= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) %></p>
 
 <p><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></p>
+
+<p>link</p>
+
+<p>Katherine & Quintin </p>
+
+
+
+
+
+
+
+
