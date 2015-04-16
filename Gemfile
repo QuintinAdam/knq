@@ -24,6 +24,8 @@ gem 'simple_form'
 gem 'mail_form'
 
 gem 'figaro'
+gem "aws-sdk"
+gem 'asset_sync'
 gem 'paperclip'
 # gem 'cocoon'
 gem 'devise_invitable'
