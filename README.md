@@ -1,6 +1,7 @@
 Knq
 ================
 
+our wedding site
 Ruby on Rails
 -------------
 
