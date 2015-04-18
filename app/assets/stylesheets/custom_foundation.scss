@@ -10,19 +10,27 @@ nav.top-bar.nav.bg-primary {
     }
   }
 
-  &.expanded .title-area {
-    background-color: $topbar-bg-color;
+  &.expanded {
+    .title-area {
+      background-color: $topbar-bg-color;
 
-    .name a:hover {
-      color: $white;
+      .name a:hover {
+        color: $white;
+      }
+
+      .toggle-topbar a{
+        color: white;
+
+        span {
+          -webkit-box-shadow: 0 10px 0 1px $white, 0 16px 0 1px $white, 0 22px 0 1px $white;
+            box-shadow: 0 10px 0 1px $white, 0 16px 0 1px $white, 0 22px 0 1px $white;
+        }
+      }
     }
 
-    .toggle-topbar a{
-      color: white;
-
-      span {
-        -webkit-box-shadow: 0 10px 0 1px $white, 0 16px 0 1px $white, 0 22px 0 1px $white;
-          box-shadow: 0 10px 0 1px $white, 0 16px 0 1px $white, 0 22px 0 1px $white;
+    .top-bar-section {
+      li {
+        border-bottom: none;
       }
     }
   }
@@ -37,7 +45,7 @@ nav.top-bar.nav.bg-primary {
 
   a:hover, a:focus, a:visited {
     background-color: $topbar-bg-color;
-    text: $white;
+    color: $white;
   }
 
   .top-bar-section ul li {

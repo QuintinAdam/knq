@@ -1,5 +1,4 @@
 .panel.text-center
   %h4
     = response
-  = link_to 'Add another RSVP', new_rsvp_path, class: 'button primary'
-  %p Please create a RSVP for each person who is attending!
+  = link_to 'Add another address', new_rsvp_path, class: 'button primary', remote: true

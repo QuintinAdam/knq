@@ -1,8 +1,6 @@
 = simple_form_for @rsvp, url: rsvp_path, html: {id: 'js-form', class: 'rsvp-form custom', "data-abide" => ""}, remote: true do |f|
-  -# %form#js-form.rsvp-form.custom{action: "#", "data-abide" => "", method: "POST"}
   = f.error_notification
   %fieldset.rsvp-details
-    / Displays a global alert if required fields are missing
     .js-display
     %legend
       Kindly respond by

@@ -1,0 +1,49 @@
+= simple_form_for @rsvp, url: rsvp_path, html: {id: 'js-form', class: 'rsvp-form custom', "data-abide" => ""}, remote: true do |f|
+  = f.error_notification
+  %fieldset.rsvp-details
+    .js-display
+    %legend
+      Help us to fill our address book!
+    .row
+      .large-6.columns
+        = f.label :first_name, 'First Name', html_options: {for: "user_first_name"}
+        %input#user_first_name.input-field{name: "user[first_name]", placeholder: "Your first name", required: "", type: "text", value: f.object.first_name}/
+        %small.error First name is required.
+      .large-6.columns
+        = f.label :last_name, 'Last Name', html_options: {for: "user_last_name"}
+        %input#user_last_name.input-field{name: "user[last_name]", placeholder: "Your last name ", required: "", type: "text", value: f.object.last_name}/
+        %small.error Last name is required.
+    .row
+      .large-6.columns
+        = f.label :email, 'Email', html_options: {for: "user_email"}
+        %input#user_email.input-field{name: "user[email]", placeholder: "name@yourdomain.com", required: "", type: "email", value: f.object.email}/
+        %small.error Valid Email is required.
+      .large-6.columns
+        = f.label :phone, 'Phone', html_options: {for: "user_phone"}
+        %input#user_phone.input-field{name: "user[phone]", placeholder: "A phone number is optional but helpful", type: "tel", value: f.object.phone}/
+    %hr/
+    .row
+      .large-12.columns
+        = f.label :street_address, 'Street Address', html_options: {for: "user_street_address"}
+        %input#user_street_address.input-field{name: "user[street_address]", placeholder: "Your street address", required: "", type: "text", value: f.object.street_address}/
+        %small.error Street address is required.
+    .row
+      .large-6.columns
+        = f.label :city, 'City', html_options: {for: "user_city"}
+        %input#user_city.input-field{name: "user[city]", placeholder: "Your city", required: "", type: "text", value: f.object.city}/
+        %small.error City is required.
+      .large-6.columns
+        = f.label :state_region, 'State or Region', html_options: {for: "user_state_region"}
+        %input#user_state_region.input-field{name: "user[state_region]", placeholder: "Your state or region", required: "", type: "text", value: f.object.state_region}/
+        %small.error State is required.
+    .row
+      .large-6.columns
+        = f.label :postal_code, 'Postal Code', html_options:{for: "user_postal_code"}
+        %input#user_postal_code.input-field{name: "user[postal_code]", placeholder: "Your postal code", required: "", type: "text", value: f.object.postal_code}/
+        %small.error Postal code is required.
+      .large-6.columns
+        = f.label :country, 'Country', html_options:{for: "user_country"}
+        %input#user_country.input-field{name: "user[country]", placeholder: "Your country", type: "text", value: f.object.country}/
+  %button.button.radius{type: "submit"}
+    %i.fa.fa-envelope
+    %span.btn-label Send
