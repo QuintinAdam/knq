@@ -6,7 +6,7 @@ gem 'pg'
 gem 'puma'
 
 gem 'devise'
-# gem 'devise_invitable'
+gem 'devise_invitable'
 gem 'upmin-admin'
 
 gem 'haml-rails'
@@ -24,11 +24,10 @@ gem 'simple_form'
 gem 'mail_form'
 
 gem 'figaro'
-gem "aws-sdk"
+gem 'aws-sdk'
 gem 'asset_sync'
 gem 'paperclip'
 # gem 'cocoon'
-gem 'devise_invitable'
 
 group :development do
   gem 'letter_opener'
@@ -46,7 +45,6 @@ end
 group :development, :test do
   gem 'jazz_fingers'
   gem 'web-console', github: 'rails/web-console', branch: 'master'
-  gem 'spring'
   gem 'rubocop'
   gem 'ffaker'
   gem 'factory_girl_rails'
