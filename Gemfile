@@ -7,7 +7,6 @@ gem 'puma'
 
 gem 'devise'
 gem 'devise_invitable'
-gem 'upmin-admin'
 
 gem 'haml-rails'
 gem 'sass-rails', '~> 5.0'
