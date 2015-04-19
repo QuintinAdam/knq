@@ -1,4 +1,4 @@
-Knq
+Katherine and Quintin
 ================
 our wedding
 our wedding site
