@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   # append :remote_ip, :user_agent
   def headers
     {
-      to: "your.email@your.domain.com",
+      to: ENV["GMAIL_USERNAME"],
       subject: "#{first_name} #{last_name} RSVP",
       from: %("#{first_name} #{last_name}" <#{email}>)
     }
