@@ -4,7 +4,7 @@ our wedding
 our wedding site
 Ruby on Rails
 -------------
-
+more
 This application requires:
 
 - Ruby 2.2.1
