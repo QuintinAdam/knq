@@ -14,14 +14,14 @@
     %link{href: "//fonts.googleapis.com/css?family=Roboto+Slab:400,700", rel: "stylesheet"}/
     %link{href: "//fonts.googleapis.com/css?family=Playfair+Display:400,400italic", rel: "stylesheet"}/
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag "//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"
+    -# # = javascript_include_tag "//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
-    %link{href: "assets/apple-touch-icon-144-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "144x144"}/
-    %link{href: "assets/apple-touch-icon-114-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "114x114"}/
-    %link{href: "assets/apple-touch-icon-72-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "72x72"}/
-    %link{href: "assets/apple-touch-icon-57-precomposed.png", rel: "apple-touch-icon-precomposed"}/
+    -# %link{href: "assets/apple-touch-icon-144-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "144x144"}/
+    -# %link{href: "assets/apple-touch-icon-114-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "114x114"}/
+    -# %link{href: "assets/apple-touch-icon-72-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "72x72"}/
+    -# %link{href: "assets/apple-touch-icon-57-precomposed.png", rel: "apple-touch-icon-precomposed"}/
   %body
     = render 'layouts/mobile_navigation'
     .row.collapse{role: "main"}
