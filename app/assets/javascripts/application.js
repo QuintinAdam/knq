@@ -20,8 +20,8 @@
 //= require jquery.scrollTo-1.4.3-min
 //= require jquery.nav.min
 //= require jquery.flexslider
-//= require google_analytics
 //= require custom
+//= require google_analytics
 
 $(function() {
   $(document).foundation();

@@ -23,7 +23,7 @@ class @GoogleAnalytics
       GoogleAnalytics.trackPageview()
 
   @trackPageview: (url) ->
-    unless GoogleAnalytics.isLocalRequest() || GoogleAnalytics.isDevRequest() || GoogleAnalytics.isStagingRequest()
+    unless GoogleAnalytics.isLocalRequest()
       if url
         window._gaq.push ["_trackPageview", url]
       else
@@ -33,17 +33,11 @@ class @GoogleAnalytics
   @isLocalRequest: ->
     GoogleAnalytics.documentDomainIncludes "local"
 
-  @isDevRequest: ->
-    GoogleAnalytics.documentDomainIncludes ".dev"
-
-  @isStagingRequest: ->
-    GoogleAnalytics.documentDomainIncludes "staging"
-
   @documentDomainIncludes: (str) ->
     document.domain.indexOf(str) isnt -1
 
   @analyticsId: ->
-    # your google analytics ID(s) here...
     'UA-62000771-1'
 
 GoogleAnalytics.load()
+
