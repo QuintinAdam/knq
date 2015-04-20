@@ -1,19 +1,19 @@
 .section-title-container
   %h2.section-title Gifts
   %span.hearts
-.small-12.large-6.large-centered.columns.wrapper
+#gift-area.small-12.large-6.large-centered.columns.wrapper
   %ul.small-block-grid-1.large-block-grid-2.block-grid
     %li
-      %a.block-logo{href: "#"}
-        %img{alt: "Logo", src: "assets/logo-1.png"}/
+      = link_to "http://www.amazon.com/gp/registry/registry.html/ref=br_ov?ie=UTF8&msg=how-others-see-list-info&type=wedding&visitor-view=1", target: '_blank', class: 'block-logo' do
+        = image_tag 'photos/amazon-logo.png', alt: 'Amazon Wedding Registry'
     %li
       %a.block-logo{href: "#"}
         %img{alt: "Logo", src: "assets/logo-2.png"}/
-    %li
-      %a.block-logo{href: "#"}
-        %img{alt: "Logo", src: "assets/logo-3.png"}/
-    %li
-      %a.block-logo{href: "#"}
-        %img{alt: "Logo", src: "assets/logo-4.png"}/
+    -# %li
+    -#   %a.block-logo{href: "#"}
+    -#     %img{alt: "Logo", src: "assets/logo-3.png"}/
+    -# %li
+    -#   %a.block-logo{href: "#"}
+    -#     %img{alt: "Logo", src: "assets/logo-4.png"}/
   %p.content-block
 
