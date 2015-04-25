@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def rsvp_form_params
     # this allows for the same of to be submitted without losing data if the user does not provide it again
-    params[:user].delete_if {|k,v| v.blank?}
+    params[:user].delete_if {|key,value| value.blank?}
     params.require(:user).permit(:email, :first_name, :last_name, :phone, :will_attend, :street_address, :city, :state_region, :postal_code, :country, :birthday, :message)
   end
 end

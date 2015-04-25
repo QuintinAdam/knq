@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery.turbolinks
-//= require xray
 //= require jquery_ujs
 //= require turbolinks
 //= require foundation.min
