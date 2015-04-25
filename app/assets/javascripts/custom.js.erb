@@ -66,26 +66,6 @@ $(document).ready(function() {
 	// 	// this is the id of the form
 	// 	var formID = $("#js-form");
 
-	// 	// submits form with ajax method
-	// 	// formID.on("submit", function() {
-
-	// 	// 	$.ajax({
-	// 	// 		url: "/rsvp",
-	// 	// 		type: "POST",
-	// 	//         data: formID.serialize(), // serializes the form's elements.
-
-	// 	//         success: function(data) {
-	// 	//         	$(".js-display")
-	// 	//         				.addClass("message-panel")
-	// 	//         				.html(data); // show response from the php script.
-	// 	//         }
-
-	// 	//     });
-
-	// 	//     return false; // avoid to execute the actual submit of the form.
-
-	// 	// });
-
 	// 	// Show/Hide RSVP Menu selection on accept/decline
 	// 	$(".decline").on("click", function(){
 	// 		$(".rsvp-meal-choice").fadeOut();
@@ -97,7 +77,6 @@ $(document).ready(function() {
 	// }
 	// rsvpFormSubmit();
 
-
 });
 
 /*-----------------------------------------------------------------------------------*/
@@ -105,74 +84,90 @@ $(document).ready(function() {
 /*  Credit to: http://stiern.com/tutorials/adding-custom-google-maps-to-your-website/
 /*-----------------------------------------------------------------------------------*/
 
-// var map;
-// var myLatlng = new google.maps.LatLng(42.480590,-83.475491); // Specify YOUR coordinates
+var map;
+var myLatlng = new google.maps.LatLng(42.480825,-83.499659); // Specify YOUR coordinates
 
-// var MY_MAPTYPE_ID = 'custom_style';
+var MY_MAPTYPE_ID = 'custom_style';
 
-// function initialize() {
+function initialize() {
 
-// 	/*----------------------------------------------------------------------------*/
-// 	/* Creates a custom color scheme for map
-// 	/* For details on styling go to the link below:
-// 	/* http://www.evoluted.net/thinktank/web-design/custom-google-maps-style-tool */
-// 	/*----------------------------------------------------------------------------*/
+	/*----------------------------------------------------------------------------*/
+	/* Creates a custom color scheme for map
+	/* For details on styling go to the link below:
+	/* http://www.evoluted.net/thinktank/web-design/custom-google-maps-style-tool */
+	/*----------------------------------------------------------------------------*/
 
-// 	var featureOpts = [
-// 		{
-// 			"featureType": "road",
-// 			"stylers": [
-// 				{ "hue": "#ff3300" },
-// 				{ "gamma": 0.82 },
-// 				{ "visibility": "on" },
-// 				{ "saturation": 62 },
-// 				{ "lightness": -7 }
-// 			]
-// 		},{
-// 			"featureType": "poi",
-// 			"stylers": [
-// 				{ "hue": "#ff0000" },
-// 				{ "lightness": 14 }
-// 			]
-// 		},{
-// 			"stylers": [
-// 				{ "hue": "#ff0000" }
-// 			]
-// 		}
-// 	]
+	var featureOpts = [
+		{
+			"featureType": "road",
+			"stylers": [
+				{ "hue": "#ff3300" },
+				{ "gamma": 0.82 },
+				{ "visibility": "on" },
+				{ "saturation": 62 },
+				{ "lightness": -7 }
+			]
+		},{
+			"featureType": "poi",
+			"stylers": [
+				{ "hue": "#ff0000" },
+				{ "lightness": 14 }
+			]
+		},{
+			"stylers": [
+				{ "hue": "#ff0000" }
+			]
+		}
+	]
 
-// 	var mapOptions = {
-// 		zoom: 18,
-// 		center: myLatlng,
-// 		disableDefaultUI: true,
-// 		scrollwheel: false,
-// 		draggable: false,
-// 		mapTypeControlOptions: {
-// 			mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
-// 		},
-// 		mapTypeId: MY_MAPTYPE_ID
-// 	};
+	var mapOptions = {
+		zoom: 15,
+		center: myLatlng,
+		disableDefaultUI: true,
+		scrollwheel: false,
+		draggable: false,
+		mapTypeControlOptions: {
+			mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+		},
+		mapTypeId: MY_MAPTYPE_ID
+	};
 
-// 	map = new google.maps.Map(document.getElementById('map-canvas'),
-// 		mapOptions);
+	map = new google.maps.Map(document.getElementById('map-canvas'),
+		mapOptions);
 
-// 	var styledMapOptions = {
-// 		name: 'Custom Style'
-// 	};
+	var styledMapOptions = {
+		name: 'Custom Style'
+	};
 
-// 	var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+	var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
 
-// 	var image = new google.maps.MarkerImage("/assets/map-marker@2x.png", null, null, null, new google.maps.Size(55,57));
+	var image = new google.maps.MarkerImage("<%= asset_path 'map-marker@2x.png' %>", null, null, null, new google.maps.Size(55,57));
 
-// 	// Includes custom marker on map
-// 	var myLatLng = new google.maps.LatLng(42.480590,-83.475491);
-// 	var beachMarker = new google.maps.Marker({
-// 		position: myLatLng,
-// 		map: map,
-// 		icon: image
-// 	});
+	// Includes custom marker on map
+	var myLatLng = new google.maps.LatLng(42.480825,-83.499659);
+	var beachMarker = new google.maps.Marker({
+		position: myLatLng,
+		map: map,
+		icon: image
+	});
 
-// 	map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
-// }
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">The Adam Residence</h1>'+
+      '<div id="bodyContent">'+
+      '<address>The Adam Residence <br/> 45810 West 11 Mile Rd. <br/> Novi, MI 48374 <br/> USA </address>'+
+      '</div>'+
+      '</div>';
 
-// google.maps.event.addDomListener(window, 'load', initialize);
+  var infowindow = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+  google.maps.event.addListener(beachMarker, 'click', function() {
+    infowindow.open(map,beachMarker);
+  });
+	map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);

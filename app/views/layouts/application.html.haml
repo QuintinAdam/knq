@@ -12,17 +12,10 @@
     /[if lt IE 9]
       = stylesheet_link_tag "ie8", media: "all"
       = javascript_include_tag 'custom.modernizr'
-    %link{href: "//fonts.googleapis.com/css?family=Roboto+Slab:400,700", rel: "stylesheet"}/
-    %link{href: "//fonts.googleapis.com/css?family=Playfair+Display:400,400italic", rel: "stylesheet"}/
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    -# # = javascript_include_tag "//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"
+    = javascript_include_tag "//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-
-    -# %link{href: "assets/apple-touch-icon-144-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "144x144"}/
-    -# %link{href: "assets/apple-touch-icon-114-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "114x114"}/
-    -# %link{href: "assets/apple-touch-icon-72-precomposed.png", rel: "apple-touch-icon-precomposed", sizes: "72x72"}/
-    -# %link{href: "assets/apple-touch-icon-57-precomposed.png", rel: "apple-touch-icon-precomposed"}/
   %body
     = render 'layouts/mobile_navigation'
     .row.collapse{role: "main"}
@@ -33,12 +26,3 @@
         = yield
         %footer.section-odd
           = render 'layouts/footer'
-
-  :javascript
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-62000771-1', 'auto');
-    ga('send', 'pageview');

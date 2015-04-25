@@ -7,15 +7,26 @@ class User < ActiveRecord::Base
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :first_name, :last_name, :email, :street_address, :city, :state_region, :postal_code, presence: true
+  validates :first_name, :last_name, :email, presence: true
   validates_format_of :email, with: Devise.email_regexp
 
-  attributes :email, :first_name, :last_name, :phone, :will_attend,:street_address, :city, :state_region, :postal_code, :country, :birthday, :message
+  attributes :email,
+             :first_name,
+             :last_name,
+             :phone,
+             :will_attend,
+             :street_address,
+             :city,
+             :state_region,
+             :postal_code,
+             :country,
+             :birthday,
+             :message
   # append :remote_ip, :user_agent
   def headers
     {
       to: ENV["GMAIL_USERNAME"],
-      subject: "#{first_name} #{last_name} Address",
+      subject: "#{first_name} #{last_name} RSVP",
       from: %("#{first_name} #{last_name}" <#{email}>)
     }
   end

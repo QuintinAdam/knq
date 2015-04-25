@@ -1,7 +1,6 @@
 - if content_for? :nav_links
   = yield :nav_links
 - else
-  -# temp
   %li
     %a{href: "#section-wedding-details"} Details
   -# %li
@@ -12,9 +11,11 @@
   -#   %a{href: "#section-3"} Groomsmen
   -# %li
   -#   %a{href: "#section-4"} Bridesmaids
-  -# %li
-    -# %a{href: "#section-5"} Gifts
   %li
-    %a{href: "#section-6"} Send Your Address
-    -# %a{href: "#section-6"} RSVP
-
+    %a{href: "#section-gift"} Gifts
+  %li
+    %a{href: "#section-rsvp"} RSVP
+  %li
+    %a{href: "#section-contact"} Contact
+  %li
+    %a{href: "#section-map"} Location

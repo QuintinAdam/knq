@@ -1,9 +1,10 @@
--# #section-0
--#   = render 'knq_invite'
--#   = render 'hero_photo'
--#   = render 'wedding_details'
--# #section-1.section-odd
--#   = render 'link_to_rsvp_section'
+#section-top
+  = render 'knq_invite'
+  = render 'hero_photo'
+#section-wedding-details.section-odd
+  = render 'wedding_details'
+#section-invite
+  = render 'link_to_rsvp_section'
 -# -# #section-1.section-odd.row
 -# -#   = render 'our_story'
 -# #section-2.row
@@ -12,20 +13,11 @@
 -# -#   = render 'groomsmen'
 -# -# #section-4
 -# -#   = render 'bridesmaids'
--# #section-5.section-odd
--#   = render 'gift'
--# #section-6.js-form
--#   = render 'rsvp'
--#   = render 'contact'
--#   = render 'map'
-
--# temp
-
-#section-0
-  = render 'knq_invite'
-  = render 'hero_photo'
-#section-wedding-details
-  = render 'wedding_details'
-#section-6.js-form
-  = render 'temp_need_your_details'
+#section-gift.section-odd
+  = render 'gift'
+#section-rsvp.js-form
+  = render 'rsvp'
+#section-contact.section-odd
   = render 'contact'
+#section-map
+  = render 'map'
