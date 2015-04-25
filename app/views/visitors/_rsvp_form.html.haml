@@ -23,9 +23,9 @@
       .large-6.columns
         = f.label :phone, 'Phone', html_options: {for: "user_phone"}
         %input#user_phone.input-field{name: "user[phone]", placeholder: "A phone number is optional but helpful", type: "tel", value: f.object.phone}/
-    .row
-      .small-12.columns
-        = link_to 'Add a Guest', '#'
+    -# .row
+    -#   .small-12.columns
+    -#     = link_to 'Add a Guest', '#'
   %fieldset.address_form
     %legend
       Help us to fill our address book!
