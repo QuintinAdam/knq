@@ -7,7 +7,7 @@
     - @category_pictures.each do |picture|
       - if category = picture.category
         %li
-          = link_to picture_path(category) do
+          = link_to pictures_category_path(category) do
             = image_tag picture.photo.url(:medium_square), alt: category.humanize
             %span.overlay-label
               = category.humanize

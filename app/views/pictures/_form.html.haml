@@ -1,0 +1,12 @@
+.row
+  .small-12.large-6.large-centered.columns
+    = simple_form_for @picture  do |f| 
+      = f.error_notification
+      .form-group
+        = f.input :photo
+        = f.collection_select :category, @category_list, :first, :first, prompt: 'Select a category for this photo'
+        = f.input :title, label:"Description"
+       
+      %p
+        = link_to 'Back', pictures_path, :class => 'button left'
+        = f.submit 'Submit', :class => 'button right'

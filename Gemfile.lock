@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/rails/web-console.git
-  revision: f5255e303d662d6a105bfdc2ad66673eed17f7e8
+  revision: e2d0921bfaa210e63cf7dc97b03c723f8efdc8e1
   branch: master
   specs:
     web-console (2.1.2)
@@ -61,14 +61,14 @@ GEM
     astrolabe (1.3.0)
       parser (>= 2.2.0.pre.3, < 3.0)
     awesome_print (1.6.1)
-    aws-sdk (2.0.39)
-      aws-sdk-resources (= 2.0.39)
-    aws-sdk-core (2.0.39)
+    aws-sdk (2.0.40)
+      aws-sdk-resources (= 2.0.40)
+    aws-sdk-core (2.0.40)
       builder (~> 3.0)
       jmespath (~> 1.0)
       multi_json (~> 1.0)
-    aws-sdk-resources (2.0.39)
-      aws-sdk-core (= 2.0.39)
+    aws-sdk-resources (2.0.40)
+      aws-sdk-core (= 2.0.40)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -112,7 +112,7 @@ GEM
     diffy (3.0.7)
     docile (1.1.5)
     erubis (2.7.0)
-    excon (0.45.2)
+    excon (0.45.3)
     execjs (2.5.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -368,9 +368,9 @@ GEM
     rake (10.4.2)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
-    rubocop (0.30.0)
+    rubocop (0.30.1)
       astrolabe (~> 1.3)
-      parser (>= 2.2.0.1, < 3.0)
+      parser (>= 2.2.2.1, < 3.0)
       powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
@@ -394,7 +394,7 @@ GEM
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
     slop (3.6.0)
-    sprockets (3.0.1)
+    sprockets (3.0.2)
       rack (~> 1.0)
     sprockets-rails (2.2.4)
       actionpack (>= 3.0)

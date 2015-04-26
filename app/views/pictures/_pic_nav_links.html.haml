@@ -4,4 +4,4 @@
       View All
   - @category_list.each do |category|
     %li{class: "#{ 'active' if params[:action] == 'show' && @pictures.first.category == category.first}"}
-      = link_to category.first.humanize, picture_path(category.first), class: 'new-page'
+      = link_to category.first.humanize, pictures_category_path(category: category.first), class: 'new-page'

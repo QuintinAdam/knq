@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require xray
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
@@ -21,7 +22,6 @@
 //= require jquery.nav.min
 //= require jquery.flexslider
 //= require custom
-//= require google_analytics
 
 $(function() {
   $(document).foundation();

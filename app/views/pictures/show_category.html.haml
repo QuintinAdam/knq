@@ -1,7 +1,7 @@
 = render 'pic_nav_links'
 
 .section-title-container
-  %h2.section-title= @pictures.first.category.humanize
+  %h2.section-title= params[:category].humanize
   %span.hearts
 .small-12.columns.margin-bottom-10
   %ul.clearing-thumbs{"data-clearing" => ""}
