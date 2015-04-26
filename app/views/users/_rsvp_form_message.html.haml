@@ -1,4 +1,5 @@
 .panel.text-center
   %h4
     = response
-  = link_to 'Add another RSVP', new_rsvp_path, class: 'button primary', remote: true
+  = link_to new_rsvp_path, class: 'button primary', remote: true do
+    Add another RSVP

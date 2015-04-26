@@ -9,11 +9,11 @@
     .row
       .large-6.columns
         = f.label :first_name, 'First Name', html_options: {for: "user_first_name"}
-        %input#user_first_name.input-field{name: "user[first_name]", placeholder: "Your first name is required", required: "", type: "text", value: f.object.first_name}/
+        %input#user_first_name.input-field{name: "user[first_name]", placeholder: "Your first name", required: "", type: "text", value: f.object.first_name}/
         %small.error First Name is required.
       .large-6.columns
         = f.label :last_name, 'Last Name', html_options: {for: "user_last_name"}
-        %input#user_last_name.input-field{name: "user[last_name]", placeholder: "Your last name is required", required: "", type: "text", value: f.object.last_name}/
+        %input#user_last_name.input-field{name: "user[last_name]", placeholder: "Your last name", required: "", type: "text", value: f.object.last_name}/
         %small.error Last Name is required.
     .row
       .large-6.columns
@@ -55,37 +55,44 @@
 
   %fieldset.rsvp-attendance
     %legend Will you be attending?
-    .large-6.columns
-      %label{for: "user_will_attend_true"}
-        %input#user_will_attend_true{name: "user[will_attend]", required: "", style: "display:none;", type: "radio", value: 'true'}/
-        %span.custom.radio.accept
-        %span.radio-label Accepts with Pleasure!
-        %small.error Please select an option.
-    .large-6.columns
-      %label{for: "user_will_attend_false"}
-        %input#user_will_attend_false{name: "user[will_attend]", required: "", style: "display:none;", type: "radio", value: 'false'}/
-        %span.custom.radio.decline
-        %span.radio-label Declines with Regret.
-  / %fieldset.rsvp-meal-choice
-  /   %legend
-  /     Please select your meal choices
-  /   .row
-  /     .large-6.columns
-  /       = f.label :first_name, html_options: {for: "firstname"}
-  /       %label{for: "main-course"} Main
-  /       %select#main-course{name: "main-course"}
-  /         %option{selected: "selected"} None
-  /         %option Chicken
-  /         %option Beef
-  /         %option Vegetarian
-  /     .large-6.columns
-  /       = f.label :first_name, html_options: {for: "firstname"}
-  /       %label{for: "dessert"} Dessert
-  /       %select#dessert{name: "dessert"}
-  /         %option{selected: "selected"} None
-  /         %option Chocolate Cake
-  /         %option Lemon Cheesecake
-  /         %option Key Lime Pie
+    .row
+      .large-6.columns
+        %label{for: "user_will_attend_true"}
+          %input#user_will_attend_true{name: "user[will_attend]", required: "", style: "display:none;", type: "radio", value: 'true'}/
+          %span.custom.radio.accept
+          %span.radio-label Accepts with Pleasure!
+          %small.error Please select an option.
+      .large-6.columns
+        %label{for: "user_will_attend_false"}
+          %input#user_will_attend_false{name: "user[will_attend]", required: "", style: "display:none;", type: "radio", value: 'false'}/
+          %span.custom.radio.decline
+          %span.radio-label Declines with Regret.
+  %fieldset.rsvp-guest-attendance
+    %legend Who else is attending?
+    .row
+      .large-12.columns
+        = f.label :guests, 'Names of Guests', html_options:{for: "user_guests"}
+        %input#user_guests.input-field{name: "user[guests]", placeholder: "Please provide names of family members or guests who will also be attending", type: "text", value: f.object.guests}/
+  -# / %fieldset.rsvp-meal-choice
+  -# /   %legend
+  -# /     Please select your meal choices
+  -# /   .row
+  -# /     .large-6.columns
+  -# /       = f.label :first_name, html_options: {for: "firstname"}
+  -# /       %label{for: "main-course"} Main
+  -# /       %select#main-course{name: "main-course"}
+  -# /         %option{selected: "selected"} None
+  -# /         %option Chicken
+  -# /         %option Beef
+  -# /         %option Vegetarian
+  -# /     .large-6.columns
+  -# /       = f.label :first_name, html_options: {for: "firstname"}
+  -# /       %label{for: "dessert"} Dessert
+  -# /       %select#dessert{name: "dessert"}
+  -# /         %option{selected: "selected"} None
+  -# /         %option Chocolate Cake
+  -# /         %option Lemon Cheesecake
+  -# /         %option Key Lime Pie
   %fieldset.other_form
     %legend
       Notes

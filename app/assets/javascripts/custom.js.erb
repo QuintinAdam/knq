@@ -61,21 +61,21 @@ $(document).ready(function() {
 	/*	RSVP Form Validation + Submission
 	/*-----------------------------------------------------------------------------------*/
 
-	// function rsvpFormSubmit() {
+	function rsvpFormSubmit() {
 
-	// 	// this is the id of the form
-	// 	var formID = $("#js-form");
+		// this is the id of the form
+		var formID = $("#js-form");
 
-	// 	// Show/Hide RSVP Menu selection on accept/decline
-	// 	$(".decline").on("click", function(){
-	// 		$(".rsvp-meal-choice").fadeOut();
-	// 	});
-	// 	$(".accept").on("click", function(){
-	// 		$(".rsvp-meal-choice").fadeIn();
-	// 	});
+		// Show/Hide RSVP Menu selection on accept/decline
+		$(".decline").on("click", function(){
+			$(".rsvp-guest-attendance").fadeOut();
+		});
+		$(".accept").on("click", function(){
+			$(".rsvp-guest-attendance").fadeIn();
+		});
 
-	// }
-	// rsvpFormSubmit();
+	}
+	rsvpFormSubmit();
 
 });
 

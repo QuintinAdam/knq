@@ -1,1 +1,4 @@
 $("#rsvp-form").html("<%= j(render 'users/rsvp_form_message', response: @response )%>").fadeIn()
+$(function() {
+    $(document).scrollTop( $("#section-rsvp").offset().top );
+});

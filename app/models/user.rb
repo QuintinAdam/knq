@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   include MailForm::Delivery
-
   enum role: [:guest, :admin]
   has_many :pictures
 
@@ -21,7 +20,8 @@ class User < ActiveRecord::Base
              :postal_code,
              :country,
              :birthday,
-             :message
+             :message,
+             :guests
   # append :remote_ip, :user_agent
   def headers
     {
