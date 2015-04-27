@@ -23,7 +23,7 @@ gem 'simple_form'
 gem 'mail_form'
 
 gem 'figaro'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 2'
 gem 'asset_sync'
 gem 'paperclip'
 # gem 'cocoon'
