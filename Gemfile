@@ -23,9 +23,10 @@ gem 'simple_form'
 gem 'mail_form'
 
 gem 'figaro'
-gem 'aws-sdk', '~> 2'
 gem 'asset_sync'
-gem 'paperclip'
+gem 'paperclip', '~> 4.1'
+gem 'aws-sdk', '~> 1.40.3'
+
 # gem 'cocoon'
 
 group :development do
