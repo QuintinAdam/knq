@@ -28,6 +28,7 @@ class  PicturesController < ApplicationController
     end
   end
 
+
   private
 
   def set_category_list

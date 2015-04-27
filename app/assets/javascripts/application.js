@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require xray
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
