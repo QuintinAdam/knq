@@ -12,7 +12,7 @@ Rails.application.routes.draw do
                 sign_up: ''
               }
 
-  # get '/photos/c/:category', to: 'pictures#show_category', as: :pictures_category
+  # get '/photos/:category', to: 'pictures#show', as: :picture
   # resources :pictures, only: [:index, :show, :new, :create], path: "/photos"
   get '/new-rsvp', to: 'users#new_rsvp', as: :new_rsvp
   post '/rsvp', to: 'users#rsvp', as: :rsvp
