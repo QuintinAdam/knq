@@ -26,7 +26,7 @@ gem 'figaro'
 gem 'asset_sync'
 gem 'paperclip', '~> 4.1'
 gem 'aws-sdk', '~> 1.40.3'
-
+gem 'rollbar', '~> 1.2.7'
 # gem 'cocoon'
 
 group :development do

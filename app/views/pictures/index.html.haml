@@ -12,7 +12,7 @@
             %li
               %a{href: picture.photo.url(:large)}
                 = image_tag picture.photo.url(:medium_square), class: 'bw-photo'
-                -# %span.overlay-label
-      %p.button.transparent-button.round.small
-        = link_to "View All #{category.humanize} Photos", pictures_category_path(category)
+      - if picture_group.size == 8
+        %p.button.transparent-button.round.small
+          = link_to "View All #{category.humanize} Photos", pictures_category_path(category)
 
