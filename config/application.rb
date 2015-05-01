@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Knq
   class Application < Rails::Application
     config.lograge.enabled = true
-    config.lograge.formatter = Lograge::Formatters::Logstash.new
+    config.lograge.formatter = Lograge::Formatters::Json.new
 
     config.lograge.custom_options = lambda do |event|
       opts = {
