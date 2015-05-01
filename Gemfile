@@ -29,6 +29,8 @@ gem 'aws-sdk', '~> 1.40.3'
 gem 'rollbar', '~> 1.2.7'
 # gem 'cocoon'
 
+gem 'lograge' # more readable logs
+
 group :development do
   gem 'letter_opener'
   gem 'better_errors'
