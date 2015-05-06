@@ -3,7 +3,7 @@ Katherine and Quintin wedding site
 
 Ruby on Rails
 -------------
-more
+
 This application requires:
 
 - Ruby 2.2.2
