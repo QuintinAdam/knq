@@ -8,6 +8,23 @@ Bundler.require(*Rails.groups)
 
 module Knq
   class Application < Rails::Application
+    config.lograge.enabled = true
+    config.lograge.formatter = Lograge::Formatters::Json.new
+
+    config.lograge.custom_options = lambda do |event|
+      opts = {
+        params: event.payload[:params],
+        time:  %Q('#{event.time}'),
+        remote_ip: event.payload[:ip],
+        request_url: event.payload[:request_url],
+        app_name: "#{Rails.application.class.parent_name.underscore.dasherize}-#{Rails.env}"
+      }
+      if event.payload[:exception]
+        quoted_stacktrace = %Q('#{Array(event.payload[:stacktrace]).to_json}')
+        opts[:stacktrace] = quoted_stacktrace
+      end
+      opts
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -19,7 +36,7 @@ module Knq
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    
+
 
     # For Foundation 5
     config.assets.precompile += %w( vendor/modernizr )
