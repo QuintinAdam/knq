@@ -69,4 +69,5 @@ end
 #  country                :string
 #  birthday               :date
 #  message                :text
+#  guests                 :string
 #
