@@ -1,12 +1,30 @@
 #section-top
   = render 'knq_invite'
-  = render 'hero_photo'
+
+#section-video.section-odd
+  .section-title-container
+    %h2.section-title Live Steam
+    %span.hearts
+  %h4 If you can not attend the wedding we will be live steaming the event here.
+  %h4 Live steam will start at 4:30pm eastern time zone Saturday, June 13th.
+  %h4 A recording of the event will be posted after the ceremony as well.
+  .flex-video.video-player
+    %iframe{allowfullscreen: "", frameborder: "0", height: "720", src: "http://www.youtube.com/embed/3EoFfIp0p08?&autoplay=1&rel=0&showinfo=0&disablekb=1&modestbranding=1&hd=1&autohide=1", width: "1280", webkitAllowFullScreen: "", mozallowfullscreen: ""}
+  %p
+    If video is not playing on the website try watching it on
+    = link_to 'http://www.youtube.com/watch?v=3EoFfIp0p08', target: '_blank' do
+      %i.fa.fa-youtube.fa-2x
+    or
+    = link_to 'https://plus.google.com/events/cq1t6evc88vp1sm1cpc1v8ocj1o?authkey=CK-h7ZuI4OSz9AE', target: '_blank' do
+      %i.fa.fa-google-plus.fa-2x
+
 #section-wedding-details
   = render 'wedding_details'
-#section-invite.section-odd
-  = render 'link_to_rsvp_section'
-#section-extra-details
-  = render 'extra_details'
+-# = render 'hero_photo'
+-# #section-invite.section-odd
+-#   = render 'link_to_rsvp_section'
+-# #section-extra-details.section-odd
+-#   = render 'extra_details'
 -# -# #section-1.section-odd.row
 -# -#   = render 'our_story'
 #section-2.row
