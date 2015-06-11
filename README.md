@@ -1,3 +1,3 @@
-Katherine and Quintin wedding site
-================
+#Katherine and Quintin Wedding Site
 
+http://www.katherineandquintin.com/
