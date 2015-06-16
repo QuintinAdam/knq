@@ -3,11 +3,8 @@
 
 #section-video.section-odd
   .section-title-container
-    %h2.section-title Live Steam
+    %h2.section-title Recording
     %span.hearts
-  %h4 If you can not attend the wedding we will be live steaming the event here.
-  %h4 Live steam will start at 4:30pm eastern time zone Saturday, June 13th.
-  %h4 A recording of the event will be posted after the ceremony as well.
   .flex-video.video-player
     %iframe{allowfullscreen: "", frameborder: "0", height: "720", src: "http://www.youtube.com/embed/3EoFfIp0p08?&autoplay=1&rel=0&showinfo=0&disablekb=1&modestbranding=1&hd=1&autohide=1", width: "1280", webkitAllowFullScreen: "", mozallowfullscreen: ""}
   %p
@@ -37,7 +34,7 @@
   = render 'gift'
 #section-rsvp.js-form
   = render 'rsvp'
-#section-contact.section-odd
+#section-contact
   = render 'contact'
-#section-map
+#section-map.section-odd
   = render 'map'
