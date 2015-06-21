@@ -17,11 +17,11 @@ class  PicturesController < ApplicationController
     else
       @picture = Picture.new(pictures_params)
     end
-    
-    if @picture.save
-      redirect_to pictures_path
-    else
-      redirect_to :back, notice: 'picture was not saved'
+
+    respond_to do |format|
+      @photo.save
+      format.html { redirect_to edit_admin_project_path(id: @photo.album_id) }
+      format.js
     end
   end
 
