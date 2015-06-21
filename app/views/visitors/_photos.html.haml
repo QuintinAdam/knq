@@ -1,7 +1,15 @@
 .section-title-container
   %h2.section-title Photos
   %span.hearts
+  %h4 Share your wedding pictures with us. We would love it!!
+  %p.pad-top-20
+    = link_to '#', class: 'button ' do
+      %i.fa.fa-heart
+      Upload photos
+      %i.fa.fa-heart
 
+
+       
 .photo-link-to.small-12.columns
   %ul.small-block-grid-1.medium-block-grid-2.large-block-grid-4
     - @category_pictures.each do |picture|

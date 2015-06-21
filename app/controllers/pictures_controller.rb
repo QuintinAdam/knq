@@ -1,7 +1,7 @@
 class  PicturesController < ApplicationController
 
   before_action :set_category_list
-  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [ :new, :edit, :update, :destroy]
 
   def index
     @pictures = Picture.order(:category, created_at: :desc).group_by(&:category).map{ |category, value| value.first(8) }
@@ -12,7 +12,12 @@ class  PicturesController < ApplicationController
   end
 
   def create
-    @picture = current_user.pictures.new(pictures_params)
+    if current_user
+      @picture = current_user.pictures.new(pictures_params)
+    else
+      @picture = Picture.new(pictures_params)
+    end
+    
     if @picture.save
       redirect_to pictures_path
     else
@@ -26,6 +31,10 @@ class  PicturesController < ApplicationController
     else
       redirect_to pictures_path, alert: 'The page you requested does not exist!'
     end
+  end
+
+  def upload
+
   end
 
 
