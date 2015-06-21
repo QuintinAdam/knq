@@ -20,6 +20,7 @@
 //= require jquery.scrollTo-1.4.3-min
 //= require jquery.nav.min
 //= require jquery.flexslider
+//= require jquery-fileupload/basic-plus
 //= require custom
 
 $(function() {
