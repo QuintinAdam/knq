@@ -1,13 +1,10 @@
-= form_for(@pictures) do |f|
-  .form-group
-    = f.file_field :photo, required: true, multiple: true, name: 'picture[photo]'
-  %div
-    = f.hidden_field :category, value: @category , name: 'picture[category]'
-  .progress-wrapper
-    %p
-      Progress:
-      %span.bitrate
-    .progress.small-12.success.round
-      %span.meter{style: "width: 0%"}
+= form_for @picture, html: { multipart: true } do |f|
+  = f.label :photo
+  = f.file_field :photo, multiple: true, name: 'picture[photo]'
+  = f.submit 'Save', class: 'button'
 
-= render 'photo_js'
+#uploadingPhotos
+
+%script#template-upload{type: "text/x-tmpl"}
+  :cdata
+    <div class="upload">{%=o.name%}<div class="progress"><span class="meter" style="width: 0%"></span></div></div>

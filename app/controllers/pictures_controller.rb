@@ -19,8 +19,8 @@ class  PicturesController < ApplicationController
     end
 
     respond_to do |format|
-      @photo.save
-      format.html { redirect_to edit_admin_project_path(id: @photo.album_id) }
+      @picture.save
+      format.html { redirect_to pictures_path }
       format.js
     end
   end
@@ -34,7 +34,7 @@ class  PicturesController < ApplicationController
   end
 
   def upload
-    @pictures = Picture.new
+    @picture = Picture.new
     @category = 'wedding'
   end
 

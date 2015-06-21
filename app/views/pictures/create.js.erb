@@ -1,14 +1,7 @@
-<% if @photo.new_record? %>
-    alert('The photo could not be uploaded: <%= j @photo.errors.full_messages.join(', ').html_safe %>');
+<% if @upload.new_record? %>
+  alert('The photo could not be uploaded: <%= j @photo.errors.full_messages.join(', ').html_safe %>');
 <% else %>
-    $('.Collage').append('<%= j render @photo %>');
-    var resizeTimer = null;
-    // hide all the images until we resize them
-    // set the element you are scaling i.e. the first child nodes of ```.Collage``` to opacity 0
-    $('.Collage .Image_Wrapper').css("opacity", 0);
-    // set a timer to re-apply the plugin
-    if (resizeTimer) clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(collage, 200);
-
-
+  // if ($('#uploadingPhotos') !== undefined) {
+  $('#uploadingPhotos').append("<%=j render partial: 'pictures/picture', locals: { picture: @picture } %>");
+  // }
 <% end %>
