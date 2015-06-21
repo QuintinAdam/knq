@@ -34,7 +34,8 @@ class  PicturesController < ApplicationController
   end
 
   def upload
-
+    @pictures = Picture.new
+    @category = 'wedding'
   end
 
 
